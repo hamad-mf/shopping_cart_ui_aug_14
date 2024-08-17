@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -38,14 +36,39 @@ class MyApp extends StatelessWidget {
       'https://m.media-amazon.com/images/I/81qY09mAi7L._AC_SX679_.jpg',
       'https://m.media-amazon.com/images/I/81h9q1Nm+9L._AC_SX569_.jpg',
       'https://m.media-amazon.com/images/I/81CRt8tjc3L._AC_SX569_.jpg',
-      'https://m.media-amazon.com/images/I/81YfiCdLF4L._AC_SX569_.jpg',
       'https://m.media-amazon.com/images/I/81oi32BML7L._AC_SX679_.jpg',
     ];
 
-    var NameAndDetails = {
+    List NameAndDetails = [
+      {"name": "Regular fit slogan", "model": "LSR21"},
       {"name": "Slim fit casual", "model": "LSR22"},
-      {"name": "Slim fit casual", "model": "LSR22"}
-    };
+      {"name": "Classic polo", "model": "LSR23"},
+      {"name": "V-neck tee", "model": "LSR24"},
+      {"name": "Graphic tee", "model": "LSR25"},
+      {"name": "Hooded sweatshirt", "model": "LSR26"},
+      {"name": "Crew neck sweater", "model": "LSR27"},
+      {"name": "Denim jacket", "model": "LSR28"},
+      {"name": "Leather jacket", "model": "LSR29"},
+      {"name": "Bomber jacket", "model": "LSR30"},
+      {"name": "Chinos", "model": "LSR31"},
+      {"name": "Slim fit jeans", "model": "LSR32"},
+      {"name": "Regular fit jeans", "model": "LSR33"},
+      {"name": "Cargo pants", "model": "LSR34"},
+      {"name": "Shorts", "model": "LSR35"},
+      {"name": "Track pants", "model": "LSR36"},
+      {"name": "Formal shirt", "model": "LSR37"},
+      {"name": "Casual shirt", "model": "LSR38"},
+      {"name": "Polo shirt", "model": "LSR39"},
+      {"name": "Henley shirt", "model": "LSR40"},
+      {"name": "Blazer", "model": "LSR41"},
+      {"name": "Sweatpants", "model": "LSR42"},
+      {"name": "Pullover", "model": "LSR43"},
+      {"name": "Turtleneck sweater", "model": "LSR44"},
+      {"name": "Cardigan", "model": "LSR45"},
+      {"name": "Trench coat", "model": "LSR46"},
+      {"name": "Puffer jacket", "model": "LSR47"},
+    ];
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -83,129 +106,128 @@ class MyApp extends StatelessWidget {
           ],
         ),
         body: Padding(
-          padding: const EdgeInsets.all(20),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Row(
+          padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    height: 55,
+                    width: 290,
+                    decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 246, 237, 237),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(padding: EdgeInsets.all(12)),
+                        Icon(
+                          Icons.search_outlined,
+                          size: 35,
+                        ),
+                        Text(
+                          "Search Anything",
+                          style: TextStyle(fontSize: 18),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: 55,
+                    width: 55,
+                    decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(10)),
+                    child: const Icon(
+                      Icons.filter_list,
+                      color: Colors.white,
+                      size: 30,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 25,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      height: 55,
-                      width: 290,
-                      decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 246, 237, 237),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Padding(padding: EdgeInsets.all(12)),
-                          Icon(
-                            Icons.search_outlined,
-                            size: 35,
-                          ),
-                          Text(
-                            "Search Anything",
-                            style: TextStyle(fontSize: 18),
-                          )
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: 55,
-                      width: 55,
+                      height: 45,
+                      width: 75,
                       decoration: BoxDecoration(
                           color: Colors.black,
                           borderRadius: BorderRadius.circular(10)),
-                      child: const Icon(
-                        Icons.filter_list,
-                        color: Colors.white,
-                        size: 30,
+                      alignment: Alignment.center,
+                      child: const Text(
+                        "All",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.white),
                       ),
+                    ),
+                    Container(
+                      height: 45,
+                      width: 75,
+                      decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 246, 237, 237),
+                          borderRadius: BorderRadius.circular(10)),
+                      alignment: Alignment.center,
+                      child: const Text("Men",
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                    ),
+                    Container(
+                      height: 45,
+                      width: 75,
+                      decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 246, 237, 237),
+                          borderRadius: BorderRadius.circular(10)),
+                      alignment: Alignment.center,
+                      child: const Text("Women",
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                    ),
+                    Container(
+                      height: 45,
+                      width: 75,
+                      decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 246, 237, 237),
+                          borderRadius: BorderRadius.circular(10)),
+                      alignment: Alignment.center,
+                      child: const Text("Kids",
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                    ),
+                    Container(
+                      height: 45,
+                      width: 75,
+                      decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 246, 237, 237),
+                          borderRadius: BorderRadius.circular(10)),
+                      alignment: Alignment.center,
+                      child: const Text("adults",
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                    ),
+                    Container(
+                      height: 45,
+                      width: 75,
+                      decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 246, 237, 237),
+                          borderRadius: BorderRadius.circular(10)),
+                      alignment: Alignment.center,
+                      child: const Text("Others",
+                          style: TextStyle(fontWeight: FontWeight.bold)),
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 25,
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        height: 45,
-                        width: 75,
-                        decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: BorderRadius.circular(10)),
-                        alignment: Alignment.center,
-                        child: const Text(
-                          "All",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.white),
-                        ),
-                      ),
-                      Container(
-                        height: 45,
-                        width: 75,
-                        decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 246, 237, 237),
-                            borderRadius: BorderRadius.circular(10)),
-                        alignment: Alignment.center,
-                        child: const Text("Men",
-                            style: TextStyle(fontWeight: FontWeight.bold)),
-                      ),
-                      Container(
-                        height: 45,
-                        width: 75,
-                        decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 246, 237, 237),
-                            borderRadius: BorderRadius.circular(10)),
-                        alignment: Alignment.center,
-                        child: const Text("Women",
-                            style: TextStyle(fontWeight: FontWeight.bold)),
-                      ),
-                      Container(
-                        height: 45,
-                        width: 75,
-                        decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 246, 237, 237),
-                            borderRadius: BorderRadius.circular(10)),
-                        alignment: Alignment.center,
-                        child: const Text("Kids",
-                            style: TextStyle(fontWeight: FontWeight.bold)),
-                      ),
-                      Container(
-                        height: 45,
-                        width: 75,
-                        decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 246, 237, 237),
-                            borderRadius: BorderRadius.circular(10)),
-                        alignment: Alignment.center,
-                        child: const Text("adults",
-                            style: TextStyle(fontWeight: FontWeight.bold)),
-                      ),
-                      Container(
-                        height: 45,
-                        width: 75,
-                        decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 246, 237, 237),
-                            borderRadius: BorderRadius.circular(10)),
-                        alignment: Alignment.center,
-                        child: const Text("Others",
-                            style: TextStyle(fontWeight: FontWeight.bold)),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                GridView.builder(
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              Expanded(
+                child: GridView.builder(
                   itemCount: ImgUrls.length,
                   shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       crossAxisSpacing: 25,
@@ -214,7 +236,6 @@ class MyApp extends StatelessWidget {
                   itemBuilder: (context, index) => Stack(
                     children: [
                       Container(
-                        color: Colors.blue,
                         child: Image.network(
                           ImgUrls[index],
                           fit: BoxFit.cover,
@@ -227,19 +248,19 @@ class MyApp extends StatelessWidget {
                           color: Colors.white,
                           width: 172,
                           height: 45,
-                          child: const Column(
+                          child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Regular fit slogan",
-                                style: TextStyle(
+                                NameAndDetails[index]["name"],
+                                style: const TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 15),
                               ),
                               Text(
-                                "LSR21",
-                                style: TextStyle(
+                                NameAndDetails[index]["model"],
+                                style: const TextStyle(
                                     color: Color.fromARGB(255, 47, 40, 40)),
                               ),
                             ],
@@ -249,9 +270,33 @@ class MyApp extends StatelessWidget {
                     ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.favorite),
+              label: 'Saved',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_bag),
+              label: 'cart',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: 'Settings',
+            ),
+          ],
         ),
       ),
     );
