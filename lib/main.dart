@@ -267,6 +267,18 @@ class MyApp extends StatelessWidget {
                           ),
                         ),
                       ),
+                      Positioned(
+                        top: 10,
+                        right: 10,
+                        child: Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10)),
+                          child: const Icon(Icons.favorite_outline_rounded),
+                        ),
+                      )
                     ],
                   ),
                 ),
